@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
-using UserRoleManager.Infrastructure;
-using UserRoleManager.Infrastructure.Repository;
+using UserRoleManager_Core.Infrastructure;
+using UserRoleManager_Core.Infrastructure.Repository;
 
-namespace UserRoleManager.Models.Permission
+namespace UserRoleManager_Core.Models.Permission
 {
    public class PermissionRequirment : IAuthorizationRequirement
     {

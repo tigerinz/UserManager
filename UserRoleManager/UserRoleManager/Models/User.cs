@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UserRoleManager.Models
+namespace UserRoleManager_Core.Models
 {
     public class User
     {

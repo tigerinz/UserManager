@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using UserRoleManager.Models;
+using UserRoleManager_Core.Models;
 
-namespace UserRoleManager.Infrastructure.Repository
+namespace UserRoleManager_Core.Infrastructure.Repository
 {
-    public class UserRepository:IRepository<User>
+    public class UserRepository : IRepository<User>
     {
         public List<User> GetAll()
         {

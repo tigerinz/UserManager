@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using UserRoleManager.Models.Permission;
+using UserRoleManager_Core.Models.Permission;
 
-namespace UserRoleManager.Infrastructure.Repository
+namespace UserRoleManager_Core.Infrastructure.Repository
 {
    public class UserPermissionRepository : IRepository<UserPermission>
     {

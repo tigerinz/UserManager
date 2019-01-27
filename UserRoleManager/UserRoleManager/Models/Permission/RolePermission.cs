@@ -4,9 +4,9 @@ using System.Text;
 
 namespace UserRoleManager_Core.Models.Permission
 {
-    public class UserPermission
+    public class RolePermission
     {
-        public string UserCode { get; set; }
+        public string RoleCode { get; set; }
         public string Url { get; set; }
     }
 }

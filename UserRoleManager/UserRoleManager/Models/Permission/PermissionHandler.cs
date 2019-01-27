@@ -6,7 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UserRoleManager.Models.Permission
+namespace UserRoleManager_Core.Models.Permission
 {
     public class PermissionHandler : AuthorizationHandler<PermissionRequirment>
     {
