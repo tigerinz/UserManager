@@ -5,20 +5,23 @@ using System.Text;
 using UserRoleManager_Core.Models;
 using UserRoleManager_Core.Models.Permission;
 
-namespace UserRoleManager_Core.Infrastructure
+namespace UserRoleManger_Mvc_UI.Infrastructure
 {
     public class UserManagerDbContext:DbContext
     {
         public UserManagerDbContext(DbContextOptions<UserManagerDbContext> options) : base(options)
         {
         }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<UserPermission> UserPermissions { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server = (localdb)\mssqllocaldb; Database =UserManager;Trusted_Connection=True;");
-        }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Server = (localdb)\mssqllocaldb; Database =UserManager;Trusted_Connection=True;");
+        //}
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
@@ -36,8 +39,8 @@ namespace UserRoleManager_Core.Infrastructure
         //        new User { UserCode = "gsw", Password = "111111", Role =new Role{ RoleName="admin" },UserName="桂素伟",CreateDate=DateTime.Parse("2017-09-02")},
         //        new User { UserCode = "aaa", Password = "222222", Role =new Role{ RoleName= "system" },UserName="测试A" ,CreateDate=DateTime.Parse("2017-09-03")}
         //    });
-         
-            
+
+
         //    //base.OnModelCreating(modelBuilder);
         //}
     }

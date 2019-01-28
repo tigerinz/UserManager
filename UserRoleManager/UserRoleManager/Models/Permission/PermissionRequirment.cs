@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
-using UserRoleManager_Core.Infrastructure;
 using UserRoleManager_Core.Infrastructure.Repository;
 
 namespace UserRoleManager_Core.Models.Permission

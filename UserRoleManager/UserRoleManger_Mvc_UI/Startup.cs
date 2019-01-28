@@ -7,10 +7,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using UserRoleManager_Core.Infrastructure;
 using UserRoleManager_Core.Infrastructure.Repository;
 using UserRoleManager_Core.Models;
 using UserRoleManager_Core.Models.Permission;
+using UserRoleManger_Mvc_UI.Infrastructure;
 
 namespace UserRoleManger_Mvc_UI
 {
@@ -31,6 +35,11 @@ namespace UserRoleManger_Mvc_UI
                 options.LoginPath = new PathString("/login");
                 options.AccessDeniedPath = new PathString("/denied");
             });
+            var connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=UserManage;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            services.AddDbContext<UserManagerDbContext>(options =>options.UseSqlServer(connectionString));
+          // services.AddDbContext<UserManagerDbContext>(options =>
+      //options.UseSqlServer(Microsoft.Extensions.Configuration.GetConnectionString("BloggingDatabase")));
+
             //注入授权Handler
             services.AddSingleton<IAuthorizationHandler, PermissionHandler>();
             services.AddSingleton<IRepository<User>, UserRepository>();
@@ -56,6 +65,8 @@ namespace UserRoleManger_Mvc_UI
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }
